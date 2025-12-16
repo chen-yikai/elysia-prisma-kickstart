@@ -2,7 +2,7 @@ import { Elysia, t } from "elysia";
 import { swagger } from "@elysiajs/swagger";
 import { prisma } from "../prisma/utils";
 
-new Elysia()
+export default new Elysia()
   .use(
     swagger({
       path: "/swagger",
