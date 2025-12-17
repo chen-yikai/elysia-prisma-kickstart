@@ -1,8 +1,8 @@
-import { Elysia, t } from "elysia";
-import { swagger } from "@elysiajs/swagger";
+import swagger from "@elysiajs/swagger";
+import Elysia, { t } from "elysia";
 import { prisma } from "../prisma/utils";
 
-export default new Elysia()
+export const api = new Elysia({ prefix: "/api" })
   .use(
     swagger({
       path: "/swagger",
@@ -145,9 +145,4 @@ export default new Elysia()
       },
     }
   )
-  .listen(3000);
-
-console.log("Server running at port 3000");
-fetch("http://localhost:3000/item").then(async (res) => {
-  console.log(await res.json());
-});
+;
